@@ -23,7 +23,6 @@ class Form extends React.Component {
       <main>
         <div>
           <form onSubmit={this.formHandler} target='_blank'>
-            {/* <label htmlFor="url">URL</label> */}
             <input id='url' type='text' name='url' placeholder='url' required />
             <button type='submit'> GO! </button>
             <br />
