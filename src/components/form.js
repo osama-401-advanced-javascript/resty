@@ -22,25 +22,27 @@ class Form extends React.Component {
     return (
       <main>
         <div>
-          <form onSubmit={this.formHandler} target='_blank'>
-            <label for='url'>URL :</label>
-            <input id='url' type='text' name='url' placeholder='url' required />
+          <form onSubmit={this.formHandler}>
+            <label>URL :</label>
+            <input id='url' type='url' name='url' placeholder='url' required />
             <button type='submit'> GO! </button>
             <br />
             <input type='radio' id='get' name='method' value='get' required />
-            <label for='get'>GET</label>
+            <label>GET</label>
             <input type='radio' id='post' name='method' value='post' required />
-            <label for='post'>POST</label>
+            <label>POST</label>
             <input type='radio' id='put' name='method' value='put' required />
-            <label for='put'>PUT</label>
+            <label>PUT</label>
             <input type='radio' id='delete' name='method' value='delete' required />
-            <label for='delete'>DELETE</label>
+            <label>DELETE</label>
           </form>
           <table>
-            <tr>
-              <td>{this.state.method}</td>
-              <td>{this.state.url}</td>
-            </tr>
+            <thead>
+              <tr>
+                <td>{this.state.method}</td>
+                <td>{this.state.url}</td>
+              </tr>
+            </thead>
           </table>
         </div>
       </main>
