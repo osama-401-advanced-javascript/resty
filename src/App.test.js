@@ -1,10 +1,10 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import App from './App';
-import Results from './components/results.js';
 
-console.log('hiiiiiiiiiiii', render);
-test('renders learn react link', () => {
+test('Results rendered after submitting', async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const button = screen.getByTestId('button');
+  fireEvent.submit(button, { target: { url: { value: 'https://jsonplaceholder.typicode.com/users' }, method: { value: 'GET' } } });
+  const results = await waitFor(() => screen.getByTestId('count'));
+  expect(results).toBeInTheDocument();
 });
