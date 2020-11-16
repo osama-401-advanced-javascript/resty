@@ -6,23 +6,37 @@ class Form extends React.Component {
     super(props);
     // init state
     this.state = {
-      method: '',
-      url: '',
+      method: 'GET',
+      url: 'URL',
     };
   }
-  formHandler = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
-    this.setState({
+    await this.setState({
       method: e.target.method.value,
       url: e.target.url.value,
     });
+    console.log(this.state.url);
+    fetch(this.state.url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('im the data', data);
+
+        const response = data;
+        const count = response.length;
+        console.log(response);
+        this.props.handler(count, response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   render() {
     return (
       <main>
         <div>
-          <form onSubmit={this.formHandler}>
+          <form onSubmit={this.handleSubmit}>
             <label>URL :</label>
             <input id='url' type='url' name='url' placeholder='url' required />
             <button type='submit'> GO! </button>
@@ -36,14 +50,6 @@ class Form extends React.Component {
             <input type='radio' id='delete' name='method' value='delete' required />
             <label>DELETE</label>
           </form>
-          <table>
-            <thead>
-              <tr>
-                <td>{this.state.method}</td>
-                <td>{this.state.url}</td>
-              </tr>
-            </thead>
-          </table>
         </div>
       </main>
     );
