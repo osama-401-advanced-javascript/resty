@@ -16,15 +16,15 @@ class Form extends React.Component {
       method: e.target.method.value,
       url: e.target.url.value,
     });
-    console.log(this.state.url);
+    // console.log(this.state.url);
     fetch(this.state.url)
       .then((response) => response.json())
       .then((data) => {
-        console.log('im the data', data);
+        // console.log('im the data', data);
 
         const response = data;
         const count = response.length;
-        console.log(response);
+        // console.log(response);
         this.props.handler(count, response);
       })
       .catch((error) => {
