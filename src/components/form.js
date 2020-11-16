@@ -6,8 +6,8 @@ class Form extends React.Component {
     super(props);
     // init state
     this.state = {
-      method: '',
-      url: '',
+      method: 'GET',
+      url: 'URL',
     };
   }
   handleSubmit = async (e) => {
@@ -18,15 +18,14 @@ class Form extends React.Component {
     });
     console.log(this.state.url);
     fetch(this.state.url)
-      .then((raw) => raw.json())
+      .then((response) => response.json())
       .then((data) => {
         console.log('im the data', data);
-        const count = data.length;
-        console.log('im the count', count);
-        const results = data;
 
-        console.log(count, results);
-        this.props.handler(count, results);
+        const response = data;
+        const count = response.length;
+        console.log(response);
+        this.props.handler(count, response);
       })
       .catch((error) => {
         console.log(error);

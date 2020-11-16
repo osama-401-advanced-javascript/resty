@@ -11,10 +11,10 @@ class App extends React.Component {
     resultArr: [],
   };
 
-  formHandler = (count, results) => {
+  formHandler = (count, response) => {
     this.setState({
       count: count,
-      resultArr: results,
+      resultArr: response,
     });
   };
   render() {
@@ -22,7 +22,7 @@ class App extends React.Component {
       <>
         <Header />
         <Form handler={this.formHandler} />
-        <Results results={{ count: this.state.count, results: this.state.resultArr }} />
+        <Results response={this.state.resultArr} count={this.state.count} />
         <Footer />
       </>
     );

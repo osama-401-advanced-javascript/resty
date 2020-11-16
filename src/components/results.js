@@ -5,7 +5,8 @@ const results = (props) => {
   console.log(props);
   return (
     <div className='json-div'>
-      <ReactJson id='json-pretty' src={(props.count, props.results)} theme='monokai' />;
+      <p>count :{props.count}</p>
+      <ReactJson id='json-pretty' name='response' src={props.response} theme='monokai' />;
     </div>
   );
 };
