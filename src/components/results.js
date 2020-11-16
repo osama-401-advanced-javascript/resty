@@ -2,7 +2,7 @@ import '../components-styles/results.scss';
 import React from 'react';
 import ReactJson from 'react-json-view';
 const results = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div data-testid='count' className='json-div'>
       <p>count :{props.count}</p>
