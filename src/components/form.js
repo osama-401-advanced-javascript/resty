@@ -39,7 +39,9 @@ class Form extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <label>URL :</label>
             <input id='url' type='url' name='url' placeholder='url' required />
-            <button type='submit'> GO! </button>
+            <button data-testid='button' type='submit'>
+              GO!
+            </button>
             <br />
             <input type='radio' id='get' name='method' value='get' required />
             <label>GET</label>

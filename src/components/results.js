@@ -4,7 +4,7 @@ import ReactJson from 'react-json-view';
 const results = (props) => {
   console.log(props);
   return (
-    <div className='json-div'>
+    <div data-testid='count' className='json-div'>
       <p>count :{props.count}</p>
       <ReactJson id='json-pretty' name='response' src={props.response} theme='monokai' />;
     </div>
