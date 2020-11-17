@@ -1,7 +1,7 @@
 import '../components-styles/form.scss';
 import React from 'react';
 import superagent from 'superagent';
-import { If, Then, Else } from 'react-if';
+import { If, Then } from 'react-if';
 
 class Form extends React.Component {
   constructor(props) {
@@ -22,8 +22,6 @@ class Form extends React.Component {
       body: e.target.body.value,
       isFetching: true,
     });
-    // let obj = {};
-    // console.log(this.state.url);
 
     return superagent[this.state.method](this.state.url)
       .send(this.state.body)
@@ -41,7 +39,6 @@ class Form extends React.Component {
         if (check) {
           let response = data;
           const count = response.length;
-          // console.log(response);
           this.props.handler(count, response);
         } else {
           history.push(query);
@@ -49,7 +46,6 @@ class Form extends React.Component {
 
           const response = data;
           const count = response.length;
-          // console.log(response);
           this.props.handler(count, response);
         }
       })
