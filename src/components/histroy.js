@@ -1,12 +1,12 @@
 import React from 'react';
-// import './history.scss';
+import '../components-styles/history.scss';
 export default function History(props) {
   let history = localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) : [];
   return (
     <>
       {history.map((query) => {
         return (
-          <li className='1' onClick={handelClick} key={query.method + query.url}>
+          <li className='method' onClick={handelClick} key={query.method + query.url}>
             <span>{query.method}</span>
             <span>{query.url}</span>
           </li>

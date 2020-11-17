@@ -22,11 +22,14 @@ class App extends React.Component {
     return (
       <>
         <Header />
-        <ul>
-          <History />
-        </ul>
         <Form handler={this.formHandler} />
-        <Results response={this.state.resultArr} count={this.state.count} />
+        <div id='container'>
+          <ul>
+            <History />
+          </ul>
+
+          <Results response={this.state.resultArr} count={this.state.count} />
+        </div>
         <Footer />
       </>
     );

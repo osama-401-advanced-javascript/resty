@@ -84,8 +84,8 @@ class Form extends React.Component {
         </div>
         <If condition={this.state.isFetching === true}>
           <Then>
-            <div>
-              <img src='https://media.giphy.com/media/3ohzdOrcdpiD26TPt6/giphy.gif' alt='loading'></img>
+            <div id='img-div'>
+              <img src='https://media.giphy.com/media/3ohzdOrcdpiD26TPt6/giphy.gif' alt='loading' width='50px'></img>
             </div>
           </Then>
         </If>

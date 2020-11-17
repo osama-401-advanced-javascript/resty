@@ -1,0 +1,21 @@
+ul{
+// position: absolute;
+// left: 5%;
+// top:30%;
+
+li{
+    margin: 35px;
+    span{
+        color: red;
+        margin-bottom: 25px;
+        font-size: 25px;
+        background-color: rgb(221, 212, 212);
+        padding: 10px 20px;
+    }
+    span:hover{
+        cursor: pointer;
+        color: rgb(40, 182, 40);
+        background-color: rgb(85, 82, 82);
+    }
+}
+}

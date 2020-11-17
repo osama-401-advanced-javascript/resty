@@ -1,6 +1,6 @@
 {
-  "main": "src/index.js",
-  "homepage": "https://othabteh.github.io/resty/",
+  
+  "homepage": "/resty",
   "name": "resty",
   "version": "0.1.0",
   "private": true,

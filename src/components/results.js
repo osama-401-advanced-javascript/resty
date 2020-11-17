@@ -14,7 +14,9 @@ const results = (props) => {
       <Else>
         <div data-testid='count' className='json-div'>
           <p>count :{props.count}</p>
-          <ReactJson id='json-pretty' name='response' src={props.response} theme='monokai' />;
+          <div id='jsonPretty'>
+            <ReactJson id='json-pretty' name='response' src={props.response} theme='isotope' />;
+          </div>
         </div>
       </Else>
     </If>
