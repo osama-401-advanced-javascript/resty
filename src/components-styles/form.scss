@@ -1,6 +1,13 @@
 main {
+  
 
   text-align: center;
+  #img-div{
+    img{
+      position: absolute;
+      background-color: red;
+    }
+  }
   div {
 
     background-color: #b0b6b5;
@@ -51,5 +58,7 @@ main {
         }
       }
     }
+  
   }
+ 
 }
