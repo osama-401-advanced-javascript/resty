@@ -11,6 +11,7 @@ class Form extends React.Component {
       method: 'GET',
       url: 'URL',
       body: '',
+
       isFetching: false,
     };
   }
@@ -20,6 +21,7 @@ class Form extends React.Component {
       method: e.target.method.value,
       url: e.target.url.value,
       body: e.target.body.value,
+
       isFetching: true,
     });
 
@@ -27,7 +29,7 @@ class Form extends React.Component {
       .send(this.state.body)
       .then((data) => {
         // console.log('im the data', data);
-        let query = { url: this.state.url, method: this.state.method, body: this.state.body };
+        let query = { url: this.state.url, method: this.state.method, body: this.state.body, result: data.body.results };
         let history = localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) : [];
         let check = false;
         history.forEach((item) => {
@@ -38,7 +40,7 @@ class Form extends React.Component {
         this.setState({ isFetching: false });
         if (check) {
           let response = data;
-          const count = response.length;
+          const count = data.body.count;
           this.props.handler(count, response);
         } else {
           history.push(query);
@@ -57,6 +59,7 @@ class Form extends React.Component {
   };
 
   render() {
+    console.log('this is the props', this.props.location);
     return (
       <main>
         <div>

@@ -1,0 +1,31 @@
+
+#details{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: rgb(221, 212, 212);
+
+    p{
+        margin-right: 10px;
+        color: red;
+        margin-bottom: 25px;
+        font-size: 25px;
+        background-color: rgb(221, 212, 212);
+        padding: 10px 20px;
+        cursor: pointer; 
+    }
+   
+}
+#osama{
+    color: red;
+    margin-bottom: 25px;
+    font-size: 25px;
+    background-color: rgb(221, 212, 212);
+    padding: 10px 20px;
+    
+}
+#osama:hover{
+    cursor: pointer;
+    color: rgb(40, 182, 40);
+    background-color: rgb(85, 82, 82);
+}
