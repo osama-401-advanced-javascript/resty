@@ -2,6 +2,7 @@ import React from 'react';
 import '../components-styles/history.scss';
 export default function History(props) {
   let history = localStorage.getItem('history') ? JSON.parse(localStorage.getItem('history')) : [];
+  console.log(history);
   return (
     <>
       {history.map((query) => {

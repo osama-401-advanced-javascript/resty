@@ -4,10 +4,48 @@ header {
   height: 150px;
   text-align: center;
   vertical-align: middle;
+  margin-bottom: 100px;
   h1 {
     color: white;
     line-height: 150px;
     font-size: 45px;
 
   }
+  nav {
+    background-color: #b0b6b5;
+   
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        position: relative;
+        a {
+          color: #111;
+          text-decoration: none;
+          &:after {
+            bottom: 0;
+            content: '';
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+          }
+          &.active,
+          &.active:hover {
+            color: red;
+          }
+        }
+        &:hover {
+          background: #111;
+          a {
+            color: #F5F5F5;
+          }
+        }
+      }
+    }
+  }
+
 }
